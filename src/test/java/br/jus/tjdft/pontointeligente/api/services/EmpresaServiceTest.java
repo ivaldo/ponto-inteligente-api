@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Optional;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,6 +37,11 @@ public class EmpresaServiceTest {
 	public void setUp() {
 		BDDMockito.given(this.empresaRepository.findByCnpj(Mockito.anyString())).willReturn(new Empresa());
 		BDDMockito.given(this.empresaRepository.save(Mockito.any(Empresa.class))).willReturn(new Empresa());
+	}
+	
+	@After
+	public final void tearDown() {
+		this.empresaRepository.deleteAll();
 	}
 	
 	@Test

@@ -57,6 +57,8 @@ public class LancamentoRepositoryTest {
 	@After
 	public final void tearDown() {
 		this.lancamentoRepository.deleteAll();
+		this.funcionarioRepository.deleteAll();
+		this.empresaRepository.deleteAll();
 	}
 	
 	@Test

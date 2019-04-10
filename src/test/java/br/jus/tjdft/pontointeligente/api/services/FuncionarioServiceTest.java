@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Optional;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,6 +37,11 @@ public class FuncionarioServiceTest {
 		BDDMockito.given(this.funcionarioRepository.getOne(Mockito.anyLong())).willReturn(new Funcionario());
 		BDDMockito.given(this.funcionarioRepository.findByEmail(Mockito.anyString())).willReturn(new Funcionario());
 		BDDMockito.given(this.funcionarioRepository.findByCpf(Mockito.anyString())).willReturn(new Funcionario());
+	}
+	
+	@After
+	public final void tearDown() {
+		this.funcionarioRepository.deleteAll();
 	}
 	
 	@Test
