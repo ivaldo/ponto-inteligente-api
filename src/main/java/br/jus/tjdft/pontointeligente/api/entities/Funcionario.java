@@ -22,6 +22,9 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import br.jus.tjdft.pontointeligente.api.enums.PerfilEnum;
 
 @Entity
@@ -195,10 +198,7 @@ public class Funcionario implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Funcionario [id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", cpf=" + cpf
-				+ ", valorHora=" + valorHora + ", qtdHorasTrabalhoDia=" + qtdHorasTrabalhoDia + ", qtdHorasAlmoco="
-				+ qtdHorasAlmoco + ", perfil=" + perfil + ", dataCriacao="
-				+ dataCriacao + ", dataAtualizacao=" + dataAtualizacao + ", empresa=" + empresa + "]";
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
 	}
 
 }

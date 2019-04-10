@@ -21,13 +21,13 @@ public class EmpresaServiceImpl implements EmpresaService {
 	
 	@Override
 	public Optional<Empresa> buscarPorCnpj(String cnpj) {
-		if (log.isInfoEnabled()) log.info("Buscando uma empresa para o CNPJ []", cnpj);
+		if (log.isInfoEnabled()) log.info("Buscando uma empresa para o CNPJ {}", cnpj);
 		return Optional.ofNullable(empresaRepository.findByCnpj(cnpj));
 	}
 
 	@Override
 	public Empresa persistir(Empresa empresa) {
-		if (log.isInfoEnabled()) log.info("Persistindo a empresa []", empresa);
+		if (log.isInfoEnabled()) log.info("Persistindo a empresa {}", empresa);
 		return this.empresaRepository.save(empresa);
 	}
 

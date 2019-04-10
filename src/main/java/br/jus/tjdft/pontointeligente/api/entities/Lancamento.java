@@ -18,6 +18,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import br.jus.tjdft.pontointeligente.api.enums.TipoEnum;
 
 @Entity
@@ -127,9 +130,7 @@ public class Lancamento implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Lancamento [id=" + id + ", data=" + data + ", descricao=" + descricao + ", localizacao=" + localizacao
-				+ ", dataCriacao=" + dataCriacao + ", dataAtualizacao=" + dataAtualizacao + ", tipo=" + tipo
-				+ ", funcionario=" + funcionario + "]";
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
 	}
 
 }

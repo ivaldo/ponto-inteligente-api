@@ -16,6 +16,9 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 @Entity
 @Table(name = "empresa")
 public class Empresa implements Serializable {
@@ -101,7 +104,6 @@ public class Empresa implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Empresa [id=" + id + ", razaoSocial=" + razaoSocial + ", cnpj=" + cnpj + ", dataCriacao=" + dataCriacao
-				+ ", dataAtualizacao=" + dataAtualizacao + "]";
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
 	}
 }
