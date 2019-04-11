@@ -22,6 +22,7 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -198,7 +199,8 @@ public class Funcionario implements Serializable {
 
 	@Override
 	public String toString() {
-		return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
+		ReflectionToStringBuilder.setDefaultStyle(ToStringStyle.JSON_STYLE);
+		return ReflectionToStringBuilder.toStringExclude(this, "empresa");
 	}
 
 }
