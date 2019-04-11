@@ -20,7 +20,7 @@ public class CadastroPFDto {
 	private String cpf;
 	private Optional<String> valorHora = Optional.empty();
 	private Optional<String> qtdHorasTrabalhoDia = Optional.empty();
-	private Optional<String> qtHorasAlmoco = Optional.empty();
+	private Optional<String> qtdHorasAlmoco = Optional.empty();
 	private String cnpj;
 	
 	public CadastroPFDto() {
@@ -90,12 +90,12 @@ public class CadastroPFDto {
 		this.qtdHorasTrabalhoDia = qtdHorasTrabalhoDia;
 	}
 
-	public Optional<String> getQtHorasAlmoco() {
-		return qtHorasAlmoco;
+	public Optional<String> getQtdHorasAlmoco() {
+		return qtdHorasAlmoco;
 	}
 
-	public void setQtHorasAlmoco(Optional<String> qtHorasAlmoco) {
-		this.qtHorasAlmoco = qtHorasAlmoco;
+	public void setQtdHorasAlmoco(Optional<String> qtdHorasAlmoco) {
+		this.qtdHorasAlmoco = qtdHorasAlmoco;
 	}
 
 	@NotEmpty(message = "CNPJ não pode ser vazio.")

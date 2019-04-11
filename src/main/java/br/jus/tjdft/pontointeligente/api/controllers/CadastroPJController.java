@@ -58,7 +58,7 @@ public class CadastroPJController {
 	 * @return
 	 * @throws NoSuchAlgorithmException
 	 */
-	@PostMapping(path = "/api/cadastrar-pj")
+	@PostMapping(path = "/api/cadastrar-pj", produces ="application/json")
 	public ResponseEntity<Response<CadastroPJDto>> cadastrar(@Valid @RequestBody CadastroPJDto dto, 
 			BindingResult result) throws NoSuchAlgorithmException {
 		
